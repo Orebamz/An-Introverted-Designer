@@ -88,6 +88,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
       onError={() => setHasError(true)}
       loading="lazy"
       decoding="async"
+      referrerPolicy="no-referrer"
     />
   );
 };

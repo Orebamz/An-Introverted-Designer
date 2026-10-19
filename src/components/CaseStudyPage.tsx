@@ -177,7 +177,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
             aria-label="Go to homepage"
           >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoNav}
               alt="An Introverted Designer Logo"
               fallbackType="logo"
               title="AID"
@@ -720,17 +720,17 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                 ? [
                     project.outcomeImages[0],
                     project.outcomeImages[1] || {
-                      url: project.image || "https://anintroverteddesigner.com/wp-content/uploads/2026/05/Dashboard-975x1024.png",
+                      url: project.image || "https://res.cloudinary.com/driutxwdh/image/upload/v1778757166/Dashboard_m3xgei.png",
                       caption: `${project.title} Operational Performance & System Architecture`
                     }
                   ]
                 : [
                     {
-                      url: "https://anintroverteddesigner.com/wp-content/uploads/2026/04/Dashboard-Home-Base-.jpg",
+                      url: "https://res.cloudinary.com/driutxwdh/image/upload/v1792374215/Dashboard_-_Home_Base-_phgga5.jpg",
                       caption: "Quarter-over-quarter engagement surge & reduced customer onboarding friction"
                     },
                     {
-                      url: "https://anintroverteddesigner.com/wp-content/uploads/2026/05/Dashboard-975x1024.png",
+                      url: "https://res.cloudinary.com/driutxwdh/image/upload/v1778757166/Dashboard_m3xgei.png",
                       caption: "100% token adoption across squads with zero UI regressions"
                     }
                   ];
@@ -990,7 +990,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
             className="flex items-center gap-2 group cursor-pointer"
           >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoFooter}
               alt="An Introverted Designer"
               fallbackType="logo"
               title="AID"

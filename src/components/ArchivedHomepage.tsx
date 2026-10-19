@@ -107,7 +107,7 @@ export const ArchivedHomepage: React.FC<ArchivedHomepageProps> = ({
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 shrink-0">
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoNav}
               alt="An Introverted Designer Logo"
               fallbackType="logo"
               title="AID"
@@ -323,7 +323,7 @@ export const ArchivedHomepage: React.FC<ArchivedHomepageProps> = ({
               {/* SnapVista Icon with white bg circle */}
               <div className="w-8 h-8 rounded-full bg-white border-2 border-white shadow-xs overflow-hidden flex items-center justify-center p-1" title="SnapVista">
                 <SafeImage
-                  src="https://anintroverteddesigner.com/wp-content/uploads/2026/05/SnapVista-Logo-ICON.png"
+                  src="https://res.cloudinary.com/driutxwdh/image/upload/v1778586266/logo_official_icon_e0paxj.png"
                   alt="SnapVista"
                   fallbackType="logo"
                   title="SnapVista"
@@ -334,7 +334,7 @@ export const ArchivedHomepage: React.FC<ArchivedHomepageProps> = ({
               {/* SignalADoc Icon with white bg circle */}
               <div className="w-8 h-8 rounded-full bg-white border-2 border-white shadow-xs overflow-hidden flex items-center justify-center p-1" title="SignalADoc">
                 <SafeImage
-                  src="https://anintroverteddesigner.com/wp-content/uploads/2026/05/Signaladoc-Logo-ICON.png"
+                  src="https://res.cloudinary.com/driutxwdh/image/upload/v1792373097/signaladoc_icon_bi5vpo.png"
                   alt="SignalADoc"
                   fallbackType="logo"
                   title="SignalADoc"
@@ -717,7 +717,7 @@ export const ArchivedHomepage: React.FC<ArchivedHomepageProps> = ({
       <footer className="border-t border-slate-200 py-10 px-4 md:px-8 bg-white mt-28 sm:mt-40">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -727,7 +727,7 @@ export const ArchivedHomepage: React.FC<ArchivedHomepageProps> = ({
             aria-label="Go to homepage"
           >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoFooter}
               alt="Logo"
               fallbackType="logo"
               title="AID"

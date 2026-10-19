@@ -61,7 +61,7 @@ export const NewHomepage: React.FC<NewHomepageProps> = ({
           {/* Zone 1: Brand Wordmark */}
           <a href="#" className="flex items-center gap-3 shrink-0 group">
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoNav}
               alt="Logo"
               fallbackType="logo"
               title="AID"
@@ -319,7 +319,7 @@ export const NewHomepage: React.FC<NewHomepageProps> = ({
                   alt={project.title}
                   fallbackType="dashboard"
                   title={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
 
                 <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -639,9 +639,18 @@ export const NewHomepage: React.FC<NewHomepageProps> = ({
       {/* Footer */}
       <footer className="mt-28 sm:mt-40 border-t border-slate-200 py-10 px-6 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigateOld();
+            }}
+            className="flex items-center gap-3 transition-opacity hover:opacity-80 cursor-pointer"
+            title="Go to homepage"
+            aria-label="Go to homepage"
+          >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoFooter}
               alt="Logo"
               fallbackType="logo"
               title="AID"
@@ -650,7 +659,7 @@ export const NewHomepage: React.FC<NewHomepageProps> = ({
             <span className="text-xs font-semibold text-[#18120F]">
               {PORTFOLIO_DATA.profile.shortName} · Senior UI/UX Designer
             </span>
-          </div>
+          </a>
 
           {/* Quick links including archive */}
           <div className="flex items-center gap-6 text-xs text-slate-500 font-medium">

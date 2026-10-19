@@ -116,7 +116,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             aria-label="Back to Homepage"
           >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoNav}
               alt="An Introverted Designer Logo"
               fallbackType="logo"
               title="AID"
@@ -1039,7 +1039,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             aria-label="Go to homepage"
           >
             <SafeImage
-              src={PORTFOLIO_DATA.profile.logoFull}
+              src={PORTFOLIO_DATA.profile.logoFooter}
               alt="Logo"
               fallbackType="logo"
               title="AID"

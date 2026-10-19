@@ -9,52 +9,64 @@ import { ArchivedHomepage } from './components/ArchivedHomepage';
 import { NewHomepage } from './components/NewHomepage';
 import { AboutPage } from './components/AboutPage';
 import { CaseStudyPage } from './components/CaseStudyPage';
+import { NotFoundPage } from './components/NotFoundPage';
+
+function resolveRoute(): string {
+  if (typeof window === 'undefined') return '/';
+  const path = window.location.pathname.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+
+  // Explicit 404 route
+  if (path === '/404' || path === '/404.html' || hash === '#404' || hash === '#/404') {
+    return '/404';
+  }
+
+  // Root / Home
+  if (path === '/' || path === '' || path === '/index.html') {
+    if (hash === '#about' || hash === '#about-page') return '/about';
+    if (hash === '#new' || hash === '#/new') return '/new';
+    if (hash.includes('#case-study/') || hash.includes('#/case-study/')) {
+      const parts = hash.includes('#case-study/') ? hash.split('#case-study/')[1] : hash.split('#/case-study/')[1];
+      const id = parts?.split('/')[0]?.split('?')[0];
+      if (id && PORTFOLIO_DATA.projects.some((p) => p.id.toLowerCase() === id.toLowerCase())) {
+        return `/case-study/${id}`;
+      }
+      return '/404';
+    }
+    if (hash === '#404' || hash === '#/404') return '/404';
+    return '/';
+  }
+
+  // About page
+  if (path === '/about' || path === '/about/' || hash === '#about' || hash === '#about-page') {
+    return '/about';
+  }
+
+  // New homepage version
+  if (path === '/new' || path === '/new/' || hash === '#new') {
+    return '/new';
+  }
+
+  // Case study pages
+  if (path.startsWith('/case-study/')) {
+    const id = path.split('/case-study/')[1]?.split('/')[0]?.split('?')[0];
+    if (id && PORTFOLIO_DATA.projects.some((p) => p.id.toLowerCase() === id.toLowerCase())) {
+      return `/case-study/${id}`;
+    }
+    return '/404';
+  }
+
+  // Any other unmatched pathname is a 404
+  return '/404';
+}
 
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname.toLowerCase();
-      const hash = window.location.hash.toLowerCase();
-      if (path.includes('/about') || hash === '#about' || hash === '#about-page') {
-        return '/about';
-      }
-      if (path.includes('/new') || hash.includes('/new')) {
-        return '/new';
-      }
-      if (path.includes('/case-study/') || hash.includes('#case-study/')) {
-        const parts = path.includes('/case-study/') 
-          ? path.split('/case-study/')[1] 
-          : hash.split('#case-study/')[1];
-        const id = parts?.split('/')[0]?.split('?')[0];
-        if (id) return `/case-study/${id}`;
-      }
-    }
-    // Default page is the clean reconstructed portfolio
-    return '/';
-  });
+  const [currentRoute, setCurrentRoute] = useState<string>(resolveRoute);
 
   // Sync with browser back/forward and hash changes
   useEffect(() => {
     const handleLocationChange = () => {
-      const path = window.location.pathname.toLowerCase();
-      const hash = window.location.hash.toLowerCase();
-      if (path.includes('/about') || hash === '#about' || hash === '#about-page') {
-        setCurrentRoute('/about');
-      } else if (path.includes('/new') || hash.includes('/new')) {
-        setCurrentRoute('/new');
-      } else if (path.includes('/case-study/') || hash.includes('#case-study/')) {
-        const parts = path.includes('/case-study/') 
-          ? path.split('/case-study/')[1] 
-          : hash.split('#case-study/')[1];
-        const id = parts?.split('/')[0]?.split('?')[0];
-        if (id) {
-          setCurrentRoute(`/case-study/${id}`);
-        } else {
-          setCurrentRoute('/');
-        }
-      } else {
-        setCurrentRoute('/');
-      }
+      setCurrentRoute(resolveRoute());
     };
 
     window.addEventListener('popstate', handleLocationChange);
@@ -103,7 +115,14 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#FFFDFB]">
-      {isCaseStudy ? (
+      {currentRoute === '/404' ? (
+        <NotFoundPage
+          onNavigateHome={() => navigateTo('/')}
+          onNavigateProjects={handleNavigateProjects}
+          onNavigateAbout={() => navigateTo('/about')}
+          onNavigateCaseStudy={handleNavigateCaseStudy}
+        />
+      ) : isCaseStudy ? (
         <CaseStudyPage 
           projectId={currentCaseStudyId}
           onNavigateHome={() => navigateTo('/')}

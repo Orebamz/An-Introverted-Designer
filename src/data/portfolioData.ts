@@ -493,7 +493,7 @@ export const PORTFOLIO_DATA = {
         "85% reduction in reporting time",
         "34% decrease in unplanned downtime"
       ],
-      image: "https://anintroverteddesigner.com/wp-content/uploads/2026/04/Dashboard-Home-Base-.jpg",
+      image: "https://res.cloudinary.com/driutxwdh/image/upload/v1792374215/Dashboard_-_Home_Base-_phgga5.jpg",
       logoIcon: "https://res.cloudinary.com/driutxwdh/image/upload/v1792092692/Logo1_mzam39.svg",
       isLocked: true,
       comingSoon: true,
@@ -543,7 +543,7 @@ export const PORTFOLIO_DATA = {
         "67% AI recommendation adoption",
         "58% daily active usage (industry average: 23%)"
       ],
-      image: "https://anintroverteddesigner.com/wp-content/uploads/2026/05/Dashboard-975x1024.png",
+      image: "https://res.cloudinary.com/driutxwdh/image/upload/v1778757166/Dashboard_m3xgei.png",
       logoIcon: "https://res.cloudinary.com/driutxwdh/image/upload/v1792093488/PortfolioIQ_logo_jnanad.png",
       isLocked: true,
       comingSoon: true,
@@ -658,7 +658,9 @@ export const PORTFOLIO_DATA = {
     calBookingUrl: "https://cal.com/anintroverteddesigner/30min",
     location: "Lagos, Nigeria & Remote",
     avatar: "https://res.cloudinary.com/driutxwdh/image/upload/v1792069386/IMG_4778__gbnjiq.jpg",
-    logoFull: "https://anintroverteddesigner.com/wp-content/uploads/2026/03/AID-Logo-Full-Oraple-1024x340.png",
+    logoNav: "https://res.cloudinary.com/driutxwdh/image/upload/v1792372667/AID_Logo_now_tck1ti.png",
+    logoFooter: "https://res.cloudinary.com/driutxwdh/image/upload/v1792372667/AID_Logo_Full_now_qaglgt.png",
+    logoFull: "https://res.cloudinary.com/driutxwdh/image/upload/v1792372667/AID_Logo_Full_now_qaglgt.png",
     resumeUrl: "https://drive.google.com/file/d/1aW2qp094P2Dl2tL8wIvHw6jK-ZXiet6M/view",
     socials: {
       linkedin: "https://linkedin.com",
