@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      // Compatibility patch for browser extensions/iframes overriding window.fetch
+      (function() {
+        try {
+          var _fetch = window.fetch ? window.fetch.bind(window) : null;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() { return _fetch; },
+            set: function(fn) { _fetch = fn; }
+          });
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Google Analytics 4 (gtag.js) Global Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMBBJW4KC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YLMBBJW4KC');
+    </script>
+
+    <!-- Primary SEO Metadata -->
+    <title>An Introverted Designer — Lead UI/UX Designer & Design Engineer | B2B SaaS (Lagos, Nigeria)</title>
+    <meta name="description" content="Portfolio of Orebamz, Lead UI/UX Designer & Design Engineer in Lagos, Nigeria specializing in high-converting B2B SaaS platforms, complex enterprise dashboards, and scalable atomic design systems." />
+    <meta name="keywords" content="Lead UI/UX Designer, Design Engineer, B2B SaaS, Lead UI/UX Designer in Lagos, Lead UI/UX Designer in Nigeria, Design Engineer in Lagos, Design Engineer in Nigeria, B2B SaaS Designer in Lagos, B2B SaaS Designer in Nigeria, UI/UX Designer Lagos, UI/UX Designer Nigeria, Design Engineer Lagos Nigeria, UI/UX Engineer, Design Systems, Product Designer, Frontend Architecture, User Experience Design, An Introverted Designer, Orebamz, Enterprise UX" />
+    <meta name="author" content="Orebamz" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://anintroverteddesigner.com/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anintroverteddesigner.com/" />
+    <meta property="og:site_name" content="An Introverted Designer" />
+    <meta property="og:title" content="An Introverted Designer — Lead UI/UX Designer & Design Engineer | B2B SaaS (Lagos, Nigeria)" />
+    <meta property="og:description" content="Designing and engineering high-impact B2B SaaS applications, atomic design systems, and enterprise user experiences in Lagos, Nigeria." />
+    <meta property="og:image" content="https://anintroverteddesigner.com/wp-content/uploads/2026/03/AID-Favicon.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@orebamz" />
+    <meta name="twitter:creator" content="@orebamz" />
+    <meta name="twitter:title" content="An Introverted Designer — Lead UI/UX Designer & Design Engineer | B2B SaaS (Lagos, Nigeria)" />
+    <meta name="twitter:description" content="Designing and engineering high-impact B2B SaaS applications, atomic design systems, and enterprise user experiences in Lagos, Nigeria." />
+    <meta name="twitter:image" content="https://anintroverteddesigner.com/wp-content/uploads/2026/03/AID-Favicon.png" />
+
+    <!-- Favicon & Theme Color -->
+    <meta name="theme-color" content="#FDEDE5" />
+    <link rel="icon" type="image/png" href="https://anintroverteddesigner.com/wp-content/uploads/2026/03/AID-Favicon.png" />
+    <link rel="apple-touch-icon" href="https://anintroverteddesigner.com/wp-content/uploads/2026/03/AID-Favicon.png" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://anintroverteddesigner.com/#person",
+          "name": "Orebamz",
+          "alternateName": "An Introverted Designer",
+          "jobTitle": "Lead UI/UX Designer & Design Engineer",
+          "description": "Lead UI/UX Designer & Design Engineer in Lagos, Nigeria specializing in B2B SaaS applications, design systems, and frontend user experience architecture.",
+          "url": "https://anintroverteddesigner.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lagos",
+            "addressCountry": "Nigeria"
+          },
+          "homeLocation": {
+            "@type": "Place",
+            "name": "Lagos, Nigeria"
+          },
+          "knowsAbout": [
+            "UI/UX Design",
+            "Design Engineering",
+            "B2B SaaS",
+            "Design Systems",
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "User Research",
+            "Information Architecture"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://anintroverteddesigner.com/#website",
+          "url": "https://anintroverteddesigner.com",
+          "name": "An Introverted Designer",
+          "description": "Portfolio of Lead UI/UX Designer & Design Engineer in Lagos, Nigeria focusing on B2B SaaS platforms and design systems.",
+          "publisher": {
+            "@id": "https://anintroverteddesigner.com/#person"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Brand Typography: Cabinet Grotesk, Work Sans, Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400,300,900,100&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FFFDFB] text-[#18120F] antialiased selection:bg-[#046BD2] selection:text-white min-h-screen flex flex-col font-['Work_Sans',sans-serif]">
+    <div id="root" class="flex-1 flex flex-col w-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
